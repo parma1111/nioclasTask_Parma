@@ -2,14 +2,17 @@ Global styles html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
 }
-
 /* .app-container {
   max-width: 800px;
   margin: 0 auto;
 } */
+
+.next-question{
+  cursor: pointer;
+}
 
 h1 {
   font-size: 2rem;
@@ -20,6 +23,7 @@ button {
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
   margin-right: 1rem;
+  margin-top: 3rem;
 }
 
 @media screen and (max-width: 768px) {

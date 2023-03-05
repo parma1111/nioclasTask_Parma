@@ -28,8 +28,12 @@ const App = () => {
     <div className="app">
       <h1>Math Questions</h1>
       <Question questionId={currentQuestionId} />
-      <button onClick={handlePreviousQuestion}>Previous Question</button>
-      <button onClick={handleNextQuestion}>Next Question</button>
+      <button className="next-question" onClick={handlePreviousQuestion}>
+        Previous Question
+      </button>
+      <button className="next-question" onClick={handleNextQuestion}>
+        Next Question
+      </button>
     </div>
   );
 };
