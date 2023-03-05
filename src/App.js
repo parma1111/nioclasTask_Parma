@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Question from "./Question";
+import "./App.css";
 
-function App() {
+const questionIds = [
+  "AreaUnderTheCurve_901",
+  "BinomialTheorem_901",
+  "DifferentialCalculus2_901",
+];
+
+const App = () => {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const currentQuestionId = questionIds[currentQuestionIndex];
+
+  const handleNextQuestion = () => {
+    setCurrentQuestionIndex((prevIndex) =>
+      prevIndex === questionIds.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePreviousQuestion = () => {
+    setCurrentQuestionIndex((prevIndex) =>
+      prevIndex === 0 ? questionIds.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Math Questions</h1>
+      <button onClick={handlePreviousQuestion}>Previous Question</button>
+      <button onClick={handleNextQuestion}>Next Question</button>
+      <Question questionId={currentQuestionId} />
     </div>
   );
-}
+};
 
 export default App;
