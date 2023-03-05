@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./index.css";
+import "./App.css";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 
 const Question = ({ questionId }) => {

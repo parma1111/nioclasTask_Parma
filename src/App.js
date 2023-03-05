@@ -27,9 +27,9 @@ const App = () => {
   return (
     <div className="app">
       <h1>Math Questions</h1>
+      <Question questionId={currentQuestionId} />
       <button onClick={handlePreviousQuestion}>Previous Question</button>
       <button onClick={handleNextQuestion}>Next Question</button>
-      <Question questionId={currentQuestionId} />
     </div>
   );
 };
